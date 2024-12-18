@@ -6,7 +6,7 @@ import { DUMMY_BUILDINGS } from "./dummy_data";
   standalone: true,
   imports: [],
   templateUrl: './building.component.html',
-  styleUrl: './building.component.css'
+  styleUrl: './gitgbuilding.component.css'
 })
 export class BuildingComponent {
 
