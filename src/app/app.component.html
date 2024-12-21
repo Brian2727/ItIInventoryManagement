@@ -2,11 +2,20 @@
 
 <app-header></app-header>
 
-<main id="users">
+<main>
   <ul>
-    <li>
-      <app-building [buildingName]=" "></app-building>
-    </li>
+    @for (b of buildings;track b.id) {
+       <li>
+            <app-building  [building]="b" [selected]="b.id == selectedBuildingID" (select)="onSelectedBuilding($event)"  ></app-building>
+        </li>
+    }
+
   </ul>
+    @if (selectedBuilding){
+      <app-inventory [buildingID]="selectedBuilding.id" [buildingName]="selectedBuilding.name"></app-inventory>
+    }
+    @else {
+      <h2 id="fallback">Select A Building</h2>
+    }
 
 </main>

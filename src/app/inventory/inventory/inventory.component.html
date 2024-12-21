@@ -1,0 +1,17 @@
+@if (isAddingItem){
+  <app-new-item (formSubmitted)="onNewItemToAdd($event)"  (cancel)="onCancelNewItem()" ></app-new-item>
+}
+
+<section id="tasks">
+  <header>
+          <h2>{{buildingName}} IT Inventory</h2>
+      <menu>
+          <button (click)="onClickAddItem()">Add Equipment</button>
+      </menu>
+  </header>
+  <ul>
+    @for (item of buildingInventory;track item.id){
+      <app-item [item]="item" > </app-item>
+    }
+  </ul>
+</section>

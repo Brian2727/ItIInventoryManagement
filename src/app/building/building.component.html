@@ -1,5 +1,5 @@
-<div>
-  <button (click)="onSelectBuilding()">
-    <span>{{ selectedBuilding.name }}</span>
+<div id="users">
+  <button [class.active]="selected"  (click)="onSelectBuilding()" >
+    <span>{{ building.name }}</span>
   </button>
 </div>

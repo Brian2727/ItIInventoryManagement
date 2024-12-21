@@ -1,0 +1,38 @@
+<div class="backdrop" (click)="onCancelAddItem()" ></div>
+<dialog open>
+  <h2>Add Task</h2>
+  <form (ngSubmit)="onSubmit()" >
+    <p>
+      <label for="title">Name</label>
+      <input type="text" id="title" name="title" [(ngModel)]="enteredName" />
+    </p>
+    <p>
+      <label for="title">Model</label>
+      <input type="text" id="model" name="title" [(ngModel)]="enteredModel" />
+    </p>
+    <p>
+      <label for="title">Serial Number</label>
+      <input type="text" id="serialNumber" name="title" [(ngModel)]="enteredSerial" />
+    </p>
+    <p>
+      <label for="title">Brand</label>
+      <input type="text" id="brand" name="title" [(ngModel)]="enteredBrand" />
+    </p>
+    <p>
+      <label for="title">Type</label>
+      <input type="text" id="type" name="title" [(ngModel)]="enteredType" />
+    </p>
+    <p>
+      <label for="summary">Details</label>
+      <textarea id="summary" rows="5" name="summary" [(ngModel)]="enteredDescription"></textarea>
+    </p>
+    <p>
+      <label for="due-date">Warranty Expiration Date</label>
+      <input type="date" id="due-date" name="due-date" [(ngModel)]="enteredDate" />
+    </p>
+    <p class="actions">
+      <button type="button" (click)="onCancelAddItem()">Cancel</button>
+      <button type="submit">Create</button>
+    </p>
+  </form>
+</dialog>

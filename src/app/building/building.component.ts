@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, output} from '@angular/core';
 import { DUMMY_BUILDINGS } from "./dummy_data";
 
 @Component({
@@ -11,10 +11,15 @@ import { DUMMY_BUILDINGS } from "./dummy_data";
 export class BuildingComponent {
 
   selectedBuilding = DUMMY_BUILDINGS[1]
-  @Input({required: true}) buildingName!: string
-  @Input() buildingLocation!: string
+  @Input({required: true}) building!: {
+    id: string,
+    name: string,
+    address: string,
+  };
+  @Input({required:true}) selected!: boolean;
+  select = output<string>()
 
   onSelectBuilding(){
-
+    this.select.emit(this.building.id)
   }
 }
